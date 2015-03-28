@@ -27,7 +27,7 @@ module.exports = function() {
 			
 		},
 		
-		pet_tipo_dade: {
+		pet_tipo_idade: {
 			type: String,
 			
 		},
@@ -51,6 +51,19 @@ module.exports = function() {
 			type: String,
 			
 		},
+		
+		cuidador: {
+			type: String,
+		},
+		
+		email: {
+			type: String,	
+		},
+		
+		telefone: {
+			type: String,
+		},
+	
 
 	});
 	
