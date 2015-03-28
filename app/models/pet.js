@@ -63,6 +63,10 @@ module.exports = function() {
 		telefone: {
 			type: String,
 		},
+		
+		imagem: {
+			type: String,
+		}
 	
 
 	});
