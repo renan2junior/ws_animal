@@ -23,6 +23,7 @@ module.exports = function() {
 		},
 
 	});
+	
 
 	schema.plugin(autoIncVideo.plugin,{
 		model : 'Video',
