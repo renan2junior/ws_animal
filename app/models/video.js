@@ -24,7 +24,7 @@ module.exports = function() {
 
 	});
 
-	schema.plugin(autoIncPet.plugin,{
+	schema.plugin(autoIncVideo.plugin,{
 		model : 'Video',
 		field : 'idvideo',
 		startAt : 1,
