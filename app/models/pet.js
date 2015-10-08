@@ -46,6 +46,11 @@ module.exports = function() {
 			type: String,
 			
 		},
+
+		pet_endereco: {
+			type: String,
+			
+		},
 		
 		pet_status: {
 			type: String,
