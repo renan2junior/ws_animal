@@ -3,6 +3,7 @@ var sanitize = require('mongo-sanitize');
 module.exports = function(app) {
 	
 	var Pet = app.models.pet;
+	var Usuario = app.models.usuario;
 	var controller = {};
 
 	controller.listaPets = function(req, res) {
@@ -11,6 +12,41 @@ module.exports = function(app) {
 			.exec()
 			.then(
 				function(pets) {
+					res.json(pets);
+				},
+				function(erro) {
+					console.error(erro);
+					res.status(500).json(erro);
+				}
+			);
+		
+	};
+	
+	controller.listaPetsPorUsuario = function(req, res) {
+		
+		var idusuario = sanitize(req.params.id);
+		var idpets = [];
+		
+		Usuario.findOne({ "idusuario": idusuario })
+			.exec()
+			.then(
+				function (usuario) {
+					console.log("Retorna usuario" + usuario);
+					idpets = usuario.pets;
+				},
+				function(erro) {
+					console.error(erro);
+					res.status(500).json(erro);
+				}	
+			);
+		
+		console.log("Busca pets" + usuario);
+		
+		Pet.find({ "_id": { $in: idpets } })
+			.exec()
+			.then(
+				function(pets) {
+					console.log("Retorna pets" + pets);
 					res.json(pets);
 				},
 				function(erro) {

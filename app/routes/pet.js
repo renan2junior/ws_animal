@@ -11,5 +11,8 @@ module.exports = function(app) {
 	
 	app.route('/pets/tipo/:tipo')
 		.get(controller.obtemPetPorTipo);
+		
+	app.route('/pets/usuario/:id')
+		.get(controller.listaPetsPorUsuario);
 
 };
