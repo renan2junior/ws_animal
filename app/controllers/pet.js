@@ -40,7 +40,7 @@ module.exports = function(app) {
 				}	
 			);
 		
-		console.log("Busca pets" + usuario);
+		console.log("Busca pets" + idpets);
 		
 		Pet.find({ "_id": { $in: idpets } })
 			.exec()
